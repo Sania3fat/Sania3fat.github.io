@@ -1,29 +1,18 @@
 # _config.yml
 title: Your Portfolio
-description: A showcase of my projects and work
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+description: Your portfolio description
 
 # Build settings
 markdown: kramdown
 theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-github-metadata
 
-# Collections for projects
-#collections:
-#  projects:
-#    output: true
- #   permalink: /:collection/:name
-
+# Collections
 collections:
   projects:
     output: true
     permalink: /projects/:title/
 
-# Default front matter for projects
+# Defaults for collections
 defaults:
   - scope:
       path: ""
@@ -31,6 +20,12 @@ defaults:
     values:
       layout: "project"
 
-sass:
-  sass_dir: _sass
-  style: compressed
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
