@@ -13,10 +13,15 @@ plugins:
   - jekyll-github-metadata
 
 # Collections for projects
+#collections:
+#  projects:
+#    output: true
+ #   permalink: /:collection/:name
+
 collections:
   projects:
     output: true
-    permalink: /:collection/:name
+    permalink: /projects/:title/
 
 # Default front matter for projects
 defaults:
@@ -25,6 +30,7 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+
 sass:
   sass_dir: _sass
   style: compressed
