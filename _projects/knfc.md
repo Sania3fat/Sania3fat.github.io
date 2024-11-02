@@ -1,4 +1,4 @@
-# _projects/knfc.md
+
 ---
 layout: project
 title: "Kent Natural Food Cooperative"
