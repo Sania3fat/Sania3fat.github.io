@@ -1,0 +1,131 @@
+<!-- index.html -->
+---
+layout: default
+title: Home
+---
+
+<div class="home">
+  <h1>Welcome to My Portfolio</h1>
+  
+  <div class="profile-section">
+    <h2>About Me</h2>
+    <p>I am a Data Analyst and Business Analytics graduate with experience in Python, SQL, and data visualization. 
+       My work focuses on turning complex data into actionable insights.</p>
+  </div>
+
+  <div class="projects-section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      {% for project in site.projects %}
+        <div class="project-card">
+          <h3>
+            <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+          </h3>
+          {% if project.technologies %}
+          <div class="technologies">
+            {% for tech in project.technologies limit:3 %}
+              <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <p>{{ project.excerpt | truncate: 150 }}</p>
+          <a href="{{ project.url | relative_url }}" class="read-more">Read More</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="skills-section">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Programming</h3>
+        <ul>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>R</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Data Visualization</h3>
+        <ul>
+          <li>Tableau</li>
+          <li>Power BI</li>
+          <li>Matplotlib</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Tools</h3>
+        <ul>
+          <li>Git</li>
+          <li>Jupyter Notebooks</li>
+          <li>MS Office Suite</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .project-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: transform 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .tech-tag {
+    display: inline-block;
+    background: #f1f8ff;
+    padding: 0.2rem 0.8rem;
+    margin: 0.2rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #0366d6;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .skill-category {
+    background: #f6f8fa;
+    padding: 1.5rem;
+    border-radius: 6px;
+  }
+
+  .skill-category ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .skill-category li {
+    margin: 0.5rem 0;
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0366d6;
+    text-decoration: none;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+  }
+</style>
