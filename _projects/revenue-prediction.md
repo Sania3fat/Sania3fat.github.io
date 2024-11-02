@@ -3,7 +3,7 @@ layout: project
 title: "University Revenue Prediction Analysis"
 date: 2024-01-01
 excerpt: "Developed predictive models to forecast university revenue and enrollment trends using Python and SQL, achieving accurate enrollment predictions for Fall 2024."
-github_repo: https://github.com/yourusername/revenue-prediction
+github_repo: [https://github.com/sania/revenue-prediction](https://github.com/Sania3fat/Sania-s_Portfolio/tree/main/Dashboard)
 technologies:
   - Python
   - SQL
