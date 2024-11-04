@@ -1,27 +1,46 @@
-# _config.yml
-title: Your Portfolio
-description: A showcase of my projects and work
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# Basic Site Settings
+title: Sania's Portfolio
+description: Data Analytics Portfolio showcasing academic and professional projects
+baseurl: "/Sania-s_Portfolio"
+url: "https://sania3fat.github.io"
+
+# Author Information
+author:
+  name: Sania Fatima
+  title: Business Analytics Graduate | Data Analyst
+  email: sfatima3@kent.edu
+  github: sania3fat
+  linkedin: "https://www.linkedin.com/in/sania-fatima-a1a732277/"
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-github-metadata
 
-# Collections for projects
+
+# Collections
 collections:
   projects:
     output: true
-    permalink: /:collection/:name
+    permalink: /projects/:path/
 
-# Default front matter for projects
+# Default Settings for Collections
 defaults:
   - scope:
-      path: ""
-      type: "projects"
+      path: "_projects/featured"
     values:
-      layout: "project"
+      type: "featured"
+  - scope:
+      path: "_projects/class"
+    values:
+      type: "class"
+
+
+# Project Categories
+project_categories:
+  - data-analysis
+  - machine-learning
+  - visualization
+  - database
+  - statistics

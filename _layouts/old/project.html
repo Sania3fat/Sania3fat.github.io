@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<article class="project-detail">
+    <header class="project-header">
+        <div class="container">
+            <h1 class="project-title">{{ page.title }}</h1>
+            
+            <div class="project-meta">
+                {% if page.organization %}
+                <span class="meta-item">{{ page.organization }}</span>
+                {% endif %}
+                {% if page.date %}
+                <span class="meta-item">{{ page.date | date: "%B %Y" }}</span>
+                {% endif %}
+                {% if page.duration %}
+                <span class="meta-item">{{ page.duration }}</span>
+                {% endif %}
+            </div>
+
+            <div class="project-links">
+                {% if page.github_url %}
+                <a href="{{ page.github_url }}" class="project-link" target="_blank">
+                    <span class="link-icon">📂</span>View Code
+                </a>
+                {% endif %}
+                {% if page.demo_url %}
+                <a href="{{ page.demo_url }}" class="project-link" target="_blank">
+                    <span class="link-icon">🔗</span>Live Demo
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="technologies">
+                {% for tech in page.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </header>
+
+    <div class="project-content container">
+        {{ content }}
+    </div>
+</article>

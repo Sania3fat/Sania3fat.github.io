@@ -1,0 +1,159 @@
+---
+layout: default
+title: Projects
+permalink: /Sania-s_Portfolio/
+---
+
+<div class="projects-directory">
+  <div class="container">
+    <header class="page-header">
+      <h1>Project Directory</h1>
+      <p class="subtitle">A comprehensive list of my data analytics projects and research work</p>
+    </header>
+
+    <div class="projects-list">
+      {% for project in site.data.projects %}
+        <div class="project-item">
+          <div class="project-content">
+            <h2>{{ project.title }}</h2>
+            <p class="project-description">{{ project.description }}</p>
+            
+            <div class="project-details">
+              <div class="technologies">
+                {% for tech in project.technologies %}
+                  <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+              </div>
+              
+              <div class="timeline">
+                <span class="date">{{ project.date | date: "%B %Y" }}</span>
+              </div>
+            </div>
+
+            {% if project.achievements %}
+            <div class="achievements">
+              <h3>Key Achievements</h3>
+              <ul>
+                {% for achievement in project.achievements %}
+                  <li>{{ achievement }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+
+            <div class="project-links">
+              {% if project.github_url %}
+                <a href="{{ project.github_url }}" class="button" target="_blank">View Code</a>
+              {% endif %}
+              {% if project.demo_url %}
+                <a href="{{ project.demo_url }}" class="button" target="_blank">Live Demo</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .projects-directory {
+    padding: 4rem 0;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .subtitle {
+    color: #6c757d;
+    font-size: 1.1rem;
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project-item {
+    background: white;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .project-item:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .project-content h2 {
+    color: #212529;
+    margin-bottom: 1rem;
+  }
+
+  .project-description {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+
+  .achievements {
+    margin: 1.5rem 0;
+  }
+
+  .achievements h3 {
+    font-size: 1.1rem;
+    color: #212529;
+    margin-bottom: 1rem;
+  }
+
+  .achievements ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .achievements li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: #495057;
+  }
+
+  .achievements li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0366d6;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #f1f8ff;
+    color: #0366d6;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .button:hover {
+    background: #0366d6;
+    color: white;
+  }
+</style>
